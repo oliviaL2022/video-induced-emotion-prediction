@@ -32,8 +32,6 @@ Result: files renamed with participant number only.
 
 Script: edf_to_eeg.m
 
-Output: .set files saved to preprocessing folder.
-
 ### 3. Clean data with HAPPE v4
 
 Download HAPPE: Plasticity in Neurodevelopment Lab – HAPPE
