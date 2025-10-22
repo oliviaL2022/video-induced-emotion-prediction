@@ -1,6 +1,6 @@
 # video-induced-emotion-prediction
-Video induced emotion and empathy study
-A. Facial-Expression & Behavioral Ratings
+# Video induced emotion and empathy study
+## A. Facial-Expression & Behavioral Ratings
 
 1. Run Noldus FaceReader on all videos
 
@@ -20,7 +20,7 @@ Notebook: Combine_files.ipynb
 
 Purpose: create per-trial/per-video tables with time-aligned expressions and ratings.
 
-B. EEG: From Raw EDF to Cleaned, TTL-Aligned Sets
+## B. EEG: From Raw EDF to Cleaned, TTL-Aligned Sets
 
 1. Rename raw EDFs to participant IDs
 
@@ -76,7 +76,7 @@ Result: cleaned, TTL-adjusted .set files per question.
 
 Notebook: Study2_baseline_correction.ipynb
 
-C. EEG Feature Extraction
+## C. EEG Feature Extraction
 
 1. Band-power time series
 
@@ -92,7 +92,7 @@ Notebook: rename_channel_and_combine.ipynb
 
 Purpose: map channel indices to EEG labels (e.g., 'Channel 1' → 'AF3').
 
-D. Multimodal Alignment & Cleaning
+## D. Multimodal Alignment & Cleaning
 
 1. Align EEG features with FaceReader + ratings
 
@@ -110,7 +110,7 @@ Drop irrelevant variables ("Channel 1 - Event_Number", "Quality", "Correct Time"
 
 Standardize variables for modeling.
 
-E. Modeling & Statistics
+## E. Modeling & Statistics
 
 1. Within-subject prediction
 
