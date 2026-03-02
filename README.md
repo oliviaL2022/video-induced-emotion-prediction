@@ -113,17 +113,15 @@ Standardize variables for modeling.
 
 Scripts:
 
-Study2 within prediction train test split.ipynb: helper code to create train/test split files and save them separately to avoid data leakage.
-
 Prediction_model_within_subject_v6.ipynb: single-modality prediction.
 
 Prediction_model_within_subject_v7.ipynb: compute and summarize statistics (accuracy, F1, permutation tests).
 
 ### 2. Cross-subject prediction
 
-Script: Prediction_model_cross_subject_v2.ipynb
+Script: 
 
-Strategy: leave-one-subject-out (LOSO) cross-validation; report evaluation metrics.
+Prediction_model_cross_subject_v2.ipynb: leave-one-subject-out (LOSO) cross-validation; report evaluation metrics.
 
 
 
