@@ -121,7 +121,7 @@ Prediction_model_within_subject_v7.ipynb: compute and summarize statistics (accu
 
 Script: 
 
-Prediction_model_cross_subject_v2.ipynb: leave-one-subject-out (LOSO) cross-validation; report evaluation metrics.
+Prediction_model_cross_subject_v3.ipynb: leave-one-subject-out (LOSO) cross-validation; report evaluation metrics.
 
 
 
