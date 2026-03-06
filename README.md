@@ -70,7 +70,7 @@ Modeling scripts:
 
 Main model: Linear SVM.
 ## Results
-## Example Multimodal Data Streams
+**Example Multimodal Data Streams**
 
 The following example shows synchronized video stimulus, EEG signals, and extracted time-series features of one participant for the Emotional Movie Clip task.
 
@@ -78,19 +78,19 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
   <img src="multi_stream_long_video.png" width="700">
 </p>
 
-### Demo: Multimodal Processing Example
+**Video Demo: Multimodal Processing Example**
 
 <video src="multimodal_long_sad_demo.mp4" controls width="700"></video>
 
 ## Prediction Results for the documentary video trials
 
-### Within-Subject Empathy Prediction
+**Within-Subject Empathy Prediction**
 
 <p align="center">
   <img src="empathy_results1.png" width="650">
 </p>
 
-### Feature Importance
+**Feature Importance**
 
 <p align="center">
   <img src="feature_importance_empathy.png" width="550">
@@ -98,7 +98,7 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
 
 The heatmap shows the importance of EEG frequency bands across channels for predicting empathy responses.
 
-### Cross-Subject Prediction (LOSO)
+**Cross-Subject Prediction (LOSO)**
 
 <p align="center">
   <img src="cross_subject_results_empathy.png" width="650">
