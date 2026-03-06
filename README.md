@@ -8,8 +8,8 @@ Participants viewed emotionally evocative video clips while EEG and behavioral r
 
 Procedure:
 - **Practice task (60s):** Participants rated emotional valence while watching a positive video scene.
-- **Empathy induction (170s):** A sad clip from *The Champ* was shown to induce empathic arousal.
-- **Experimental trials (36 clips):**
+- **Emotional Movie Clip task (170s):** A sad clip from *The Champ* was shown to induce empathic arousal.
+- **Main Task: Short documentary video clip task (36 clips):**
   - 16 clips depicting moderately painful experiences
   - 20 neutral clips  
   Each trial began with a 2-second fixation cross followed by a video stimulus.
