@@ -1,128 +1,79 @@
-# Video induced emotion and empathy study
-## A. Facial-Expression & Behavioral Ratings
+# Multimodal Emotion & Empathy Prediction from EEG and Facial Expressions
 
-### 1. Run Noldus FaceReader on all videos
+This project investigates how neural activity and facial expressions relate to emotion perception and empathy during video viewing. The pipeline integrates **EEG signals**, **facial-expression analysis**, and **behavioral ratings** to build machine learning models that predict participants’ emotional responses.
 
-Software: FaceReader
+## Experiment Design
 
-Export per-frame expression metrics (valence + basic emotions).
+Participants viewed emotionally evocative video clips while EEG and behavioral responses were recorded.
 
-### 2. Fix / annotate video timestamps
+Procedure:
+- **Practice task (60s):** Participants rated emotional valence while watching a positive video scene.
+- **Empathy induction (170s):** A sad clip from *The Champ* was shown to induce empathic arousal.
+- **Experimental trials (36 clips):**
+  - 16 clips depicting moderately painful experiences
+  - 20 neutral clips  
+  Each trial began with a 2-second fixation cross followed by a video stimulus.
 
-Notebook: add_times_to_Video.ipynb
+Participants provided continuous slider ratings during viewing.
 
-Goal: add correct timestamps to FaceReader output (align with PsychoPy timing).
+## Data Sources
 
-### 3. Combine FaceReader output + behavioral ratings from PsychoPy
+The analysis combines three synchronized data streams:
 
-Notebook: Combine_files.ipynb
+- **EEG recordings** (EDF files from portable EEG headset)
+- **Facial expressions** extracted from videos using Noldus FaceReader
+- **Behavioral ratings** collected with PsychoPy
 
-Purpose: create per-trial/per-video tables with time-aligned expressions and ratings.
+## Pipeline Overview
 
-## B. EEG: From Raw EDF to Cleaned, TTL-Aligned Sets
+## EEG Preprocessing
 
-### 1. Rename raw EDFs to participant IDs
+Raw EEG signals were processed using the **HAPPE pipeline** and EEGLAB.
 
-Script: rename_original_edf.m
+Steps include:
 
-Result: files renamed with participant number only.
+- Rename raw EDF files (`rename_original_edf.m`)
+- Convert EDF → EEGLAB `.set` (`edf_to_eeg.m`)
+- Artifact removal with HAPPE
+- Extract original event markers (`get_original_event_marker.m`)
+- Create behavioral event markers (`Make_4qs_ttls.ipynb`)
+- Apply markers and generate cleaned datasets
+- Perform baseline correction (`Study2_baseline_correction.ipynb`)
 
-### 2. Convert EDF → EEGLAB .set
+## Feature Extraction
 
-Script: edf_to_eeg.m
+EEG features were computed to capture neural dynamics:
 
-### 3. Clean data with HAPPE v4
+- **Band-power time series** (`make_power_time_series.m`)
+- **Entropy features** (`make_time_series_entropy_final.m`)
+- Channel relabeling and feature aggregation (`rename_channel_and_combine.ipynb`)
 
-Download HAPPE: Plasticity in Neurodevelopment Lab – HAPPE
+Facial-expression metrics (valence and basic emotions) were extracted frame-by-frame using **FaceReader** and aligned with EEG timestamps.
 
-Run HAPPE on .set files to remove artifacts.
+## Prediction Tasks
 
-### 4. Extract original event markers (empathy vs neutral video)
+Machine learning models were trained to predict participants’ emotional responses:
 
-Script: get_original_event_marker.m
+- **Q1:** Perceived emotion of the characters in the ducumentary video clips
+- **Q2:** Participants' emotional response
+- **Q3:** Empathy toward the characters
 
-### 5. Create new event markers based on user responses
+Modeling scripts:
 
-Notebook: Make_4qs_ttls.ipynb
+- `Prediction_model_within_subject_v6.ipynb` – within-subject prediction
+- `Prediction_model_cross_subject_v3.ipynb` – leave-one-subject-out cross-validation
 
-Explanation of variables:
+Main model: Linear SVM.
+## Results
 
-Q1_slider.response: How does the person/people feel? (emotion perception)
+## Libraries and Toolboxes
 
-Q2_slider.response: How do you feel? (self-emotion)
+- **Python:** NumPy, Pandas, scikit-learn, SciPy, Matplotlib  
+- **MATLAB:** EEGLAB, HAPPE EEG preprocessing pipeline  
+- **Other tools:** PsychoPy, Noldus FaceReader
 
-Q3_slider.response: How much empathy do you feel for the person/people? (empathy)
+## Goal
 
-Q4: original video type (empathy vs neutral)
-
-### 6. Apply new event markers to EEG data
-
-Scripts:
-
-make_q1_eeg_study2.m
-
-make_q2_eeg_study2.m
-
-make_q3_eeg_study2.m
-
-make_q4_eeg_study2.m
-
-Result: cleaned, TTL-adjusted .set files per question.
-
-### 7. Baseline correction
-
-Notebook: Study2_baseline_correction.ipynb
-
-## C. EEG Feature Extraction
-
-### 1. Band-power time series
-
-Script: make_power_time_series.m
-
-### 2. Entropy time series
-
-Script: make_time_series_entropy_final.m
-
-### 3. Channel re-labeling
-
-Notebook: rename_channel_and_combine.ipynb
-
-Purpose: map channel indices to EEG labels (e.g., 'Channel 1' → 'AF3').
-
-## D. Multimodal Alignment & Cleaning
-
-### 1. Align EEG features with FaceReader + ratings
-
-Script: Combine_study2_features
-
-### 2. Final individual-level cleaning
-
-Notebook: Clean_combined_files_v2.ipynb
-
-Tasks:
-
-Perform final quality control (QC) checks.
-
-Drop irrelevant variables ("Channel 1 - Event_Number", "Quality", "Correct Time", "Chunk Index").
-
-Standardize variables for modeling.
-
-## E. Modeling & Statistics
-
-### 1. Within-subject prediction
-
-Scripts:
-
-Prediction_model_within_subject_v6.ipynb: single-modality prediction.
-
-Prediction_model_within_subject_v7.ipynb: compute and summarize statistics (accuracy, F1, permutation tests).
-
-### 2. Cross-subject prediction
-
-Script: 
-
-Prediction_model_cross_subject_v3.ipynb: leave-one-subject-out (LOSO) cross-validation; report evaluation metrics.
-
-
+The project demonstrates how **multimodal time-series data (EEG + facial expressions + behavioral ratings)** can be integrated to model emotional perception and empathy using machine learning.
 
 
