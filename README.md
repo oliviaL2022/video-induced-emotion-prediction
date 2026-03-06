@@ -72,13 +72,13 @@ Main model: Linear SVM.
 ## Results
 **Example Multimodal Data Streams**
 
-The following example shows synchronized video stimulus, EEG signals, and extracted time-series features of one participant for the Emotional Movie Clip task.
+The following example shows synchronized video stimulus, EEG signals, and extracted time-series features of one participant for the Emotional Movie Clip task. Demo video uploaded to the repository.
 
 <p align="center">
   <img src="multi_stream_long_video.png" width="700">
 </p>
 
-Demo video uploaded to the repository.
+
 
 ### Prediction Results for the documentary video trials
 
