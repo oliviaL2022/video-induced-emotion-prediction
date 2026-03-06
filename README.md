@@ -88,8 +88,7 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
   <img src="empathy_results1.png" width="650">
 </p>
 The model achieved strong within-subject performance (F1 = 0.83), significantly outperforming permutation baselines (p < .001).
-
-
+  
 **Feature Importance**
 
 <p align="center">
