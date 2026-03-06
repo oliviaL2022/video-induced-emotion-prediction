@@ -87,6 +87,7 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
 <p align="center">
   <img src="empathy_results1.png" width="650">
 </p>
+
 The model achieved strong within-subject performance (F1 = 0.83), significantly outperforming permutation baselines (p < .001).
   
 **Feature Importance**
@@ -112,6 +113,6 @@ Cross-subject prediction using leave-one-subject-out validation did not exceed c
 
 ## Goal
 
-The project demonstrates how **multimodal time-series data (EEG + facial expressions + behavioral ratings)** can be integrated to model emotional perception and empathy using machine learning.
+The project demonstrates how **multimodal time-series data (EEG + facial expressions + behavioral ratings)** can be integrated to model emotional perception and empathy.
 
 
