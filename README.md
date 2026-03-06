@@ -78,13 +78,9 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
   <img src="multi_stream_long_video.png" width="700">
 </p>
 
-**Video Demo: Multimodal Processing Example**
+Demo video uploaded to the repository.
 
-[![Watch the demo](multi_stream_long_video.png)](multimodal_long_sad_demo.mp4)
-
-Click the image to watch the demo video.
-
-## Prediction Results for the documentary video trials
+### Prediction Results for the documentary video trials
 
 **Within-Subject Empathy Prediction**
 
@@ -92,6 +88,7 @@ Click the image to watch the demo video.
   <img src="empathy_results1.png" width="650">
 </p>
 The model achieved strong within-subject performance (F1 = 0.83), significantly outperforming permutation baselines (p < .001).
+
 **Feature Importance**
 
 <p align="center">
@@ -106,6 +103,7 @@ The heatmap shows the importance of EEG frequency bands across channels for pred
   <img src="cross_subject_results_empathy.png" width="650">
 </p>
 Cross-subject prediction using leave-one-subject-out validation did not exceed chance performance, suggesting substantial individual variability in empathy-related neural patterns.
+
 ## Libraries and Toolboxes
 
 - **Python:** NumPy, Pandas, scikit-learn, SciPy, Matplotlib  
