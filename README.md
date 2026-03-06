@@ -80,7 +80,9 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
 
 **Video Demo: Multimodal Processing Example**
 
-<video src="multimodal_long_sad_demo.mp4" controls width="700"></video>
+[![Watch the demo](multi_stream_long_video.png)](multimodal_long_sad_demo.mp4)
+
+Click the image to watch the demo video.
 
 ## Prediction Results for the documentary video trials
 
@@ -89,21 +91,21 @@ The following example shows synchronized video stimulus, EEG signals, and extrac
 <p align="center">
   <img src="empathy_results1.png" width="650">
 </p>
-
+The model achieved strong within-subject performance (F1 = 0.83), significantly outperforming permutation baselines (p < .001).
 **Feature Importance**
 
 <p align="center">
   <img src="feature_importance_empathy.png" width="550">
 </p>
 
-The heatmap shows the importance of EEG frequency bands across channels for predicting empathy responses.
+The heatmap shows the importance of EEG frequency bands across channels for predicting empathy responses. Feature importance analysis suggests that frontal EEG alpha and gamma activity are key predictors of empathy responses.
 
 **Cross-Subject Prediction (LOSO)**
 
 <p align="center">
   <img src="cross_subject_results_empathy.png" width="650">
 </p>
-
+Cross-subject prediction using leave-one-subject-out validation did not exceed chance performance, suggesting substantial individual variability in empathy-related neural patterns.
 ## Libraries and Toolboxes
 
 - **Python:** NumPy, Pandas, scikit-learn, SciPy, Matplotlib  
