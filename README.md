@@ -13,6 +13,11 @@ Procedure:
   - 16 clips depicting moderately painful experiences
   - 20 neutral clips  
   Each trial began with a 2-second fixation cross followed by a video stimulus.
+<p align="center">
+  <img src="experiment_design1.png" width="650">
+</p>
+
+*Figure: Experimental procedure for the short documentary video task.*
 
 Participants provided continuous slider ratings during viewing.
 
@@ -65,6 +70,39 @@ Modeling scripts:
 
 Main model: Linear SVM.
 ## Results
+## Example Multimodal Data Streams
+
+The following example shows synchronized video stimulus, EEG signals, and extracted time-series features of one participant for the Emotional Movie Clip task.
+
+<p align="center">
+  <img src="multi_stream_long_video.png" width="700">
+</p>
+
+### Demo: Multimodal Processing Example
+
+<video src="multimodal_long_sad_demo.mp4" controls width="700"></video>
+
+## Prediction Results for the documentary video trials
+
+### Within-Subject Empathy Prediction
+
+<p align="center">
+  <img src="empathy_results1.png" width="650">
+</p>
+
+### Feature Importance
+
+<p align="center">
+  <img src="feature_importance_empathy.png" width="550">
+</p>
+
+The heatmap shows the importance of EEG frequency bands across channels for predicting empathy responses.
+
+### Cross-Subject Prediction (LOSO)
+
+<p align="center">
+  <img src="cross_subject_results_empathy.png" width="650">
+</p>
 
 ## Libraries and Toolboxes
 
