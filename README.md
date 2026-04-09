@@ -1,6 +1,13 @@
 # Multimodal Emotion & Empathy Prediction from EEG and Facial Expressions
 
-This project investigates how neural activity and facial expressions relate to emotion perception and empathy during video viewing. The pipeline integrates **EEG signals**, **facial-expression analysis**, and **behavioral ratings** to build machine learning models that predict participants’ emotional responses.
+## Goal
+This project investigates how neural activity and facial expressions relate to emotion perception and empathy during video viewing. The pipeline integrates **EEG signals**, **facial-expression analysis**, and **behavioral ratings** to build machine learning models that predict emotional perception and empathy.
+
+## Libraries and Toolboxes
+
+- **Python:** NumPy, Pandas, scikit-learn, SciPy, Matplotlib  
+- **MATLAB:** EEGLAB, HAPPE EEG preprocessing pipeline  
+- **Other tools:** PsychoPy, Noldus FaceReader
 
 ## Experiment Design
 
@@ -56,7 +63,6 @@ EEG features were computed to capture neural dynamics:
 Facial-expression metrics (valence and basic emotions) were extracted frame-by-frame using **FaceReader** and aligned with EEG timestamps.
 
 ## Prediction Tasks
-
 Machine learning models were trained to predict participants’ emotional responses:
 
 - **Q1:** Perceived emotion of the characters in the ducumentary video clips
@@ -68,7 +74,18 @@ Modeling scripts:
 - `Prediction_model_within_subject_v6.ipynb` – within-subject prediction
 - `Prediction_model_cross_subject_v3.ipynb` – leave-one-subject-out cross-validation
 
-Main model: Linear SVM.
+## Modeling Approach
+
+Model selection was informed by prior work (Dissertation Study 1), where multiple classical machine learning models (e.g., Linear SVM, Random Forest, KNN) were systematically evaluated.
+
+Based on that comparison, a **Linear Support Vector Machine (SVM)** was selected for the current study due to its strong and stable performance in predicting emotion-related outcomes.
+
+The linear formulation also allows for interpretable feature weights, enabling examination of the contribution of EEG frequency bands and channels to prediction performance.
+
+To evaluate whether model performance exceeded chance, we conducted **permutation testing**.  
+Labels were randomly shuffled and the full modeling pipeline was repeated to generate a null distribution of performance.
+
+
 ## Results
 **Example Multimodal Data Streams**
 
@@ -105,14 +122,6 @@ The heatmap shows the importance of EEG frequency bands across channels for pred
 </p>
 Cross-subject prediction using leave-one-subject-out validation did not exceed chance performance, suggesting substantial individual variability in empathy-related neural patterns.
 
-## Libraries and Toolboxes
 
-- **Python:** NumPy, Pandas, scikit-learn, SciPy, Matplotlib  
-- **MATLAB:** EEGLAB, HAPPE EEG preprocessing pipeline  
-- **Other tools:** PsychoPy, Noldus FaceReader
-
-## Goal
-
-The project demonstrates how **multimodal time-series data (EEG + facial expressions + behavioral ratings)** can be integrated to model emotional perception and empathy.
 
 
